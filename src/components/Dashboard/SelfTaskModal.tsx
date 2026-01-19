@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import NeumorphCard from '../UI/NeumorphButton';
 import NeumorphButton from '../UI/NeumorphButton';
-import { X, Send, FileUp } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 
 interface SelfTaskModalProps {
     onClose: () => void;

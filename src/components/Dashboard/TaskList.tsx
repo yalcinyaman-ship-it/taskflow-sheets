@@ -4,7 +4,7 @@ import { Task } from '../../types';
 import NeumorphCard from '../UI/NeumorphCard';
 import NeumorphButton from '../UI/NeumorphButton';
 import Statistics from './Statistics';
-import { FileText, Calendar, User, Plus } from 'lucide-react';
+import { FileText, Plus } from 'lucide-react';
 import SelfTaskModal from './SelfTaskModal';
 
 interface TaskListProps {
@@ -82,42 +82,37 @@ const TaskList: React.FC<TaskListProps> = ({ onSelectTask, selectedEditor }) => 
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {filteredTasks.map(task => (
-                        <NeumorphCard
+                        <div
                             key={task.is_id}
-                            className="cursor-pointer hover:shadow-neumorph-sm transition-shadow"
                             onClick={() => onSelectTask(task)}
+                            className="cursor-pointer"
                         >
-                            <div className="flex items-start justify-between mb-3">
-                                <h3 className="font-bold text-lg text-text line-clamp-2">{task.is_basligi}</h3>
-                                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${task.status === 'Tamamlandı'
-                                    ? 'bg-green-100 text-green-700'
-                                    : 'bg-yellow-100 text-yellow-700'
-                                    }`}>
-                                    {task.status === 'Tamamlandı' ? '✅' : '⏳'}
-                                </span>
-                            </div>
-
-                            <p className="text-sm text-gray-600 mb-4 line-clamp-2">{task.is_detayi}</p>
-
-                            <div className="space-y-2 text-xs text-gray-500">
-                                <div className="flex items-center gap-2">
-                                    <Calendar className="w-4 h-4" />
-                                    <span>{task.is_atama_tarihi}</span>
+                            <NeumorphCard className="hover:shadow-neumorph-lg transition-shadow">
+                                <div className="flex justify-between items-start mb-3">
+                                    <div className="flex-1">
+                                        <h3 className="font-bold text-lg text-text mb-1">{task.is_basligi}</h3>
+                                        <p className="text-sm text-gray-600 line-clamp-2">{task.is_detayi}</p>
+                                    </div>
+                                    <span className={`ml-3 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${task.status === 'Tamamlandı'
+                                        ? 'bg-green-100 text-green-700'
+                                        : 'bg-yellow-100 text-yellow-700'
+                                        }`}>
+                                        {task.status}
+                                    </span>
                                 </div>
-                                {isAdmin && (
-                                    <div className="flex items-center gap-2">
-                                        <User className="w-4 h-4" />
-                                        <span>{task.atanan_kisi}</span>
-                                    </div>
-                                )}
-                                {task.ekler.length > 0 && (
-                                    <div className="flex items-center gap-2">
-                                        <FileText className="w-4 h-4" />
-                                        <span>{task.ekler.length} ek dosya</span>
-                                    </div>
-                                )}
-                            </div>
-                        </NeumorphCard>
+                                <div className="flex items-center gap-4 text-xs text-gray-500">
+                                    <span>📅 {task.is_atama_tarihi}</span>
+                                    <span>👤 {task.atanan_kisi}</span>
+                                    {task.notes.length > 0 && <span>💬 {task.notes.length}</span>}
+                                    {task.ekler.length > 0 && (
+                                        <span className="flex items-center gap-1">
+                                            <FileText className="w-3 h-3" />
+                                            {task.ekler.length}
+                                        </span>
+                                    )}
+                                </div>
+                            </NeumorphCard>
+                        </div>
                     ))}
                 </div>
             )}

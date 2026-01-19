@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { FileUploadData } from '../../types';
-import NeumorphCard from '../UI/NeumorphCard';
 import NeumorphButton from '../UI/NeumorphButton';
 import { X, Upload, FileText } from 'lucide-react';
 

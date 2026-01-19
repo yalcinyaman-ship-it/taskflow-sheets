@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useApp } from '../../context/AppContext';
 import NeumorphCard from '../UI/NeumorphCard';
 import NeumorphButton from '../UI/NeumorphButton';
@@ -55,8 +55,8 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedEditor, onSelectEditor }) => 
                                 <button
                                     onClick={() => onSelectEditor(null)}
                                     className={`w-full flex justify-between items-center text-sm py-2 px-3 rounded-lg transition-colors ${selectedEditor === null
-                                            ? 'bg-primary text-white'
-                                            : 'hover:bg-gray-100'
+                                        ? 'bg-primary text-white'
+                                        : 'hover:bg-gray-100'
                                         }`}
                                 >
                                     <span className="font-semibold">📋 Tüm Görevler</span>
@@ -78,10 +78,10 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedEditor, onSelectEditor }) => 
                                         {user.name}
                                     </span>
                                     <span className={`px-2 py-1 rounded-full text-xs font-semibold ${selectedEditor === user.name
-                                            ? 'bg-white/20 text-white'
-                                            : user.taskCount === 0 ? 'bg-green-100 text-green-700' :
-                                                user.taskCount <= 3 ? 'bg-yellow-100 text-yellow-700' :
-                                                    'bg-red-100 text-red-700'
+                                        ? 'bg-white/20 text-white'
+                                        : user.taskCount === 0 ? 'bg-green-100 text-green-700' :
+                                            user.taskCount <= 3 ? 'bg-yellow-100 text-yellow-700' :
+                                                'bg-red-100 text-red-700'
                                         }`}>
                                         {user.taskCount}
                                     </span>

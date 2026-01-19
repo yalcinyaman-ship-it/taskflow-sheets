@@ -8,7 +8,7 @@ interface StatisticsProps {
 }
 
 const Statistics: React.FC<StatisticsProps> = ({ userName }) => {
-    const { getUserStats, currentUser, isAdmin } = useApp();
+    const { getUserStats, currentUser } = useApp();
 
     const stats = userName ? getUserStats(userName) : getUserStats(currentUser || '');
 
