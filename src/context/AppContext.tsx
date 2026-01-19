@@ -4,9 +4,8 @@ import { Task, Note, UserSummary, UserData, FileUploadData, UserStats, PendingTa
 // ⚙️ PRODUCTION MODE - Google Sheets'e yazmak için false olmalı!
 const DEV_MODE = false;
 
-// 🔴 ÖNEMLİ: Google Apps Script deploy URL'ini buraya yapıştır!
-// Deploy > New Deployment > Web App > Copy URL
-const GOOGLE_SCRIPT_URL = "BURAYA_GOOGLE_APPS_SCRIPT_URL_YAPISTIR";
+// ✅ Google Apps Script URL (Production)
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwR1y9KIoZLKrTfbaEfNI9ift4jxj4PGm_1R-GdsMjPCYOeeDy9-hU40YYIeocZnNI-JQ/exec";
 const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTDCxzNv6Awsdf3LBysPZfGBAxL5TdzyzaTsqi99H6ChLSGeN2TPNHXzvyph7W9memyuGDUfghLFyJo/pub?gid=0&single=true&output=csv";
 
 // Mock data for development
