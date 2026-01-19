@@ -330,7 +330,8 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
             try {
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'cors', // ✅ FIXED: Changed from 'no-cors'
+                    mode: 'cors',
+                    credentials: 'omit', // ✅ FIXED: Prevent cookie conflicts
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         action: 'addTask',
@@ -381,6 +382,7 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'cors',
+                    credentials: 'omit', // ✅ FIXED: Prevent cookie conflicts
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ action: 'addNote', is_id: taskId, note: newNote })
                 });
@@ -414,6 +416,7 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'cors',
+                    credentials: 'omit', // ✅ FIXED: Prevent cookie conflicts
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         action: 'completeTask',
@@ -452,6 +455,7 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'cors',
+                    credentials: 'omit', // ✅ FIXED: Prevent cookie conflicts
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ action: 'submitForApproval', task: newPendingTask })
                 });
@@ -476,6 +480,7 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'cors',
+                    credentials: 'omit', // ✅ FIXED: Prevent cookie conflicts
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ action: 'approveTask', taskId })
                 });
@@ -502,6 +507,7 @@ export const AppProvider = ({ children }: { children?: ReactNode }) => {
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'cors',
+                    credentials: 'omit', // ✅ FIXED: Prevent cookie conflicts
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ action: 'rejectTask', taskId, reason })
                 });
