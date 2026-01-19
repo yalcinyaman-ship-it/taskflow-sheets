@@ -1,11 +1,11 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Task, Note, UserSummary, UserData, FileUploadData, UserStats, PendingTask } from '../types';
 
-// ⚙️ PRODUCTION MODE - Google Sheets'e yazmak için false olmalı!
+// ⚙️ PRODUCTION MODE - Google Sheets backend aktif!
 const DEV_MODE = false;
 
-// ✅ Google Apps Script URL (Production)
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwR1y9KIoZLKrTfbaEfNI9ift4jxj4PGm_1R-GdsMjPCYOeeDy9-hU40YYIeocZnNI-JQ/exec";
+// ✅ Google Apps Script URL (New Deployment - 19 Jan 2026)
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwy75hb17uAs6O34svpde0KF7lvLh92jackL6hrUnn-fk5ZVGCGTBALl-7WwMLtxwPrRQ/exec";
 const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTDCxzNv6Awsdf3LBysPZfGBAxL5TdzyzaTsqi99H6ChLSGeN2TPNHXzvyph7W9memyuGDUfghLFyJo/pub?gid=0&single=true&output=csv";
 
 // Mock data for development
